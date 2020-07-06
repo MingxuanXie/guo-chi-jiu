@@ -7,16 +7,16 @@
   </head>
   <body>
     <a-scene renderer="antialias: true; colorManagement: true;" 
-            background="color: #e2e2e2" fog="type: exponential; color: #dfdfdf; density: 0.1" loading-screen="dotsColor: #e2e2dc; backgroundColor: #9ec9ce" vr-mode-ui="enabled: false" wasd-control> 
+            background="color: #e2e2e2" loading-screen="dotsColor: #e2e2dc; backgroundColor: #9ec9ce" vr-mode-ui="enabled: false" wasd-control> 
       <a-assets>
-        <a-asset-item id="model" src="/assets/conan_beta/scene.gltf"></a-asset-item>
+        <a-asset-item id="model" src="/assets/xiang_yu/scene.gltf"></a-asset-item>
       </a-assets>
       <a-camera id="player" position="0 1.5 2" far="1000" fov="75"></a-camera>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
       <a-entity light="color: #eee; intensity: 1" position="0 1 2"></a-entity>
       <a-entity light="type: ambient; color: #eee; intensity: 1"></a-entity>
 
-      <a-entity gltf-model="#model" scale="0.01 0.01 0.01" animation-mixer></a-entity>
+      <a-entity gltf-model="#model" scale="0.25 0.25 0.25" animation-mixer></a-entity>
       
     </a-scene>
   </body>
