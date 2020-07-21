@@ -22,7 +22,11 @@ nginx初始内容：
 ├── nginx-logo.png
 └── poweredby.png -> nginx-logo.png
 ```
-删除目录下所有文件`rm -fr *`
+删除目录下所有文件`rm -fr *` 
+
+列出目录下所有隐藏文件`ls -a`
+
+删除目录下所有隐藏文件`rm -rf * .*`
 
 然后 git clone到当前文件夹`git clone https://github.com/MingxuanXie/guo-chi-jiu.git .`
 
