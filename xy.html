@@ -39,7 +39,8 @@
                   cameraView.srcObject = stream;
               })
               .catch(function(error) {
-                  console.error("Oops. Something is broken.", error);
+                  // console.error("Oops. Something is broken.", error);
+                  alert("当前浏览器不支持AR，请转用原生浏览器（如Safari）打开页面");
               });
           }
   
