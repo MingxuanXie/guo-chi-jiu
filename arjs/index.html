@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>国池酒AR</title>
+</head>
+<script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.js"></script>
+<script src="js/aframe-extras.min.js"></script>
+
+<body style="margin: 0px; overflow: hidden;">
+	<a-scene embedded arjs="patternRatio: 0.8;" vr-mode-ui="enabled: false">
+    <assets>
+        <a-asset-item id="model" src="../assets/yu_ji/scene.gltf"></a-asset-item>
+    </assets>
+
+    <a-entity camera id="maincamera"></a-entity>
+    <a-entity light="type: ambient; color: #FFFFFF"></a-entity>
+  </a-scene>
+</body>
+</html>
