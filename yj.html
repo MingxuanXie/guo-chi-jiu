@@ -2,129 +2,91 @@
 <html>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <head>
-    <title>国池酒AR互动</title>
-    <script src="js/aframe.min.js"></script>
-    <script src="js/aframe-extras.min.js"></script>
-    <script src="js/aframe-gif-shader.min.js"></script>
-    <script src="js/aframe-gif-component.min.js"></script>
-    <style>h1 {text-align: center; color: blue;}</style>
-    <!-- Create Video Feed Background using https://glitch.com/edit/#!/stack-57493298?path=index.html%3A15%3A0 -->
-    <style>   
-      #webcam {
-          opacity:1;
-          position: fixed;
-          background-size: 100% 100%;
-          top: 0; left: 0; 
-          min-width: 100%; min-height: 100%;
-          width: auto; height: auto;
-          z-index: -1000;
-      }
-      .intro-overlay {
-            z-index: 1;
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            /* max-width: 700px; */
-            box-sizing: border-box;
-            padding: 1.5em;
-            color: #FFF;
-            background: rgba(0, 0, 0, 0.0);
-            font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
-          }
-    </style>
-
-    <script>
-      var cameraView;
-      var ua = window.navigator.userAgent.toLowerCase(); // for Wechat detection
-      var constraints = {
-          audio: false,
-          video: {
-              facingMode: "environment",
-          }
-      };
-      // Access the device camera and stream to cameraView
-      function cameraStart() {
-        // Detect if Wechat
-        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-            alert("AR体验暂不支持微信\n请用原生浏览器（如Safari）打开页面并允许使用设备相机");
-        }
-        cameraView = document.querySelector("#webcam");
-        navigator.mediaDevices
-            .getUserMedia(constraints)
-            .then(function(stream) {
-            cameraView.srcObject = stream;
-        })
-        .catch(function(error) {
-            // console.error("Oops. Something is broken.", error);
-            alert("当前浏览器不支持AR\n请用原生浏览器（如Safari）打开页面并允许使用设备相机");
-        });
-      }
-      // Start the video stream when the window loads
-      window.addEventListener("load", cameraStart, false);
-
-  </script>
+  <title>国池酒AR互动</title>
+  <script src="js/aframe.min.js"></script>
+  <script src="js/aframe-extras.min.js"></script>
+  <script src="js/aframe-gif-shader.min.js"></script>
+  <script src="js/aframe-gif-component.min.js"></script>
+  <script src="js/camera.js"></script>
+  <style>h1 {text-align: center; color: blue;}</style>
+  <style>   
+    #webcam {
+        opacity:1;
+        position: fixed;
+        background-size: 100% 100%;
+        top: 0; left: 0; 
+        min-width: 100%; min-height: 100%;
+        width: auto; height: auto;
+        z-index: -1000;
+    }
+    .intro-overlay {
+      z-index: 1;
+      margin: 0;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .button {
+      border: none;
+      color: white;
+      opacity: 0.9;
+      background-color:crimson;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      font-family: PingFangSC-Regular, sans-serif;
+      font-weight: bold;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    /* Loading Screen */
+    .a-loader-title {
+        z-index: 1;
+        position: absolute;
+        font-family: PingFangSC-Regular, sans-serif;
+    }
+  </style>
   </head>
   <body>
     <audio id="voice">
       <source src="assets/yu_ji/yj1.mp3" type="audio/mpeg">
     </audio>
-    <div id="dialog" class="intro-overlay">
-      <h1>测试页面</h1>
-      <button onclick="activateScene()" type="button">开始</button>
+    <div id="startbutton" class="intro-overlay" hidden>
+      <button class="button" onclick="activateScene()" type="button">开始体验</button>
     </div>
     <div id="game" class="intro-overlay" hidden>
-      <button onclick="activateGame()" type="button">划拳</button>
+      <button class="button" onclick="activateGame()" type="button">出 拳</button>
+    </div>
+    <div id="replay" class="intro-overlay" hidden>
+      <button class="button" onclick="activateReplay()" type="button">再 来</button>
     </div>
     <video id="webcam" autoplay playsinline></video>
-    <div id="myScene" hidden>
-      <a-scene renderer="antialias: true; colorManagement: true;" 
-               loading-screen="dotsColor: #e2e2dc; backgroundColor: #e2e2e2" 
-               vr-mode-ui="enabled: false"
-               device-orientation-permission-ui="enabled: false"
-              > 
-        <a-assets>
-          <a-asset-item id="model" src="assets/yu_ji/scene.glb" preload="auto"></a-asset-item>
-          <a-asset-item id="huaquan-model" src="assets/huaquan/huaquan.gltf" preload="auto"></a-asset-item>
-          <img id="st" src="assets/img/st.png" preload="auto">
-          <img id="jd" src="assets/img/jd.png" preload="auto">
-          <img id="bu" src="assets/img/bu.png" preload="auto">
-          <img id="huaquan" src="assets/img/huaquan.gif" preload="auto">
-        </a-assets>
-        <a-entity camera position="0 1 0" rotation="-5 0 0"></a-entity>
-        <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
-        <a-entity light="color: #eee; intensity: 1" position="0 1 2"></a-entity>
-        <a-entity light="type: ambient; color: #eee; intensity: 1"></a-entity>
-        <a-entity id="npc" gltf-model="#model" scale="0.2 0.2 0.2" position="0 0 -2" rotation="0 0 0" animation-mixer="clip: yuji-jinchang; timeScale:0; loop: once"></a-entity>
-        <!-- <a-entity id="opponent" gltf-model="#huaquan-model" position="0 1.1 -0.4" scale="0.05 0.05 0.05" rotation="90 0 0" animation-mixer="timeScale: 10"></a-entity> -->
-        <a-entity id="opponent" position="0 0.75 -0.4" scale="0.04 0.04 0.04" geometry="primitive:circle;" visible="false" material="shader:gif; src: #huaquan" gif=""></a-entity>
-        <!-- <a-entity gltf-model="#model" scale="20 20 20" position="0 0 -2.5" rotation="0 10 0" visible="true" animation-mixer="clip: xy-xunhuan; loop: repeat"></a-entity> -->
-      </a-scene>
-      </div>
-
-      <script>
-        var x = document.getElementById("voice"); 
-        var y = document.getElementById("myScene");
-        var z = document.getElementById("npc");
-        var a = document.getElementById("dialog");
-        var b = document.getElementById("opponent");
-        var c = document.getElementById("game");
-        function activateScene() { 
-          x.play(); 
-          y.style.display = "block";
-          z.setAttribute('animation-mixer', {timeScale: 1});
-          a.style.display = "none";
-
-          setTimeout(function(){
-            b.object3D.visible = true;
-            c.style.display = "block";
-          }, 25000);
-        }
-        function activateGame() { 
-            // b.setAttribute('animation-mixer', {timeScale: 0});
-            b.components.gif.togglePlayback();
-        }
-      </script>
-
+    <a-scene renderer="antialias: true; colorManagement: true;" 
+    loading-screen="dotsColor: #fff; backgroundColor: crimson" 
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false"
+    > 
+      <a-assets id="a-loader">
+        <a-asset-item id="model" src="assets/yu_ji/scene.glb" preload="auto"></a-asset-item>
+        <a-asset-item id="huaquan-model" src="assets/huaquan/huaquan.gltf" preload="auto"></a-asset-item>
+        <img id="st" src="assets/img/st.png" preload="auto">
+        <img id="jd" src="assets/img/jd.png" preload="auto">
+        <img id="bu" src="assets/img/bu.png" preload="auto">
+        <img id="huaquan" src="assets/img/huaquan.gif" preload="auto">
+      </a-assets>
+      <a-entity camera position="0 1 0"></a-entity>
+      <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+      <a-entity light="color: #eee; intensity: 1" position="0 1 2"></a-entity>
+      <a-entity light="type: ambient; color: #eee; intensity: 1"></a-entity>
+      <a-entity id="npc" gltf-model="#model" scale="0.25 0.25 0.25" position="-0.05 -0.35 -2.5" rotation="0 0 0" animation-mixer="clip: yuji-jinchang; timeScale:0; loop: once"></a-entity>
+      <!-- <a-entity id="opponent" gltf-model="#huaquan-model" position="0 1.1 -0.4" scale="0.05 0.05 0.05" rotation="90 0 0" animation-mixer="timeScale: 10"></a-entity> -->
+      <a-entity id="opponent" position="0.1 1.275 -0.4" scale="0.04 0.04 0.04" geometry="primitive:circle;" visible="false" material="shader:gif; src: #huaquan; color: #eedddd" gif=""></a-entity>
+    </a-scene>
+    <script src="js/build.js"></script>
   </body>
 </html>

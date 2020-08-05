@@ -43,3 +43,5 @@ nginx初始内容：
 Mix HTML elements with A-frame: https://aframe.city/
 
 GLTF to GLB Packer: https://glb-packer.glitch.me/   https://sbtron.github.io/makeglb/
+
+Create Video Feed Background using https://glitch.com/edit/#!/stack-57493298?path=index.html%3A15%3A0
