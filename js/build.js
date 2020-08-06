@@ -4,24 +4,23 @@ var a = document.getElementById("startbutton");
 var b = document.getElementById("opponent");
 var c = document.getElementById("game");
 var d = document.getElementById("replay");
-var e = false;
+var e = true;
 document.getElementById("a-loader").addEventListener("loaded", activateStartButton);
 function activateStartButton() {
   a.style.display = "block";
 }
-function activateScene() {        
-    x.play(); 
-    setTimeout(function(){
-      z.setAttribute('animation-mixer', {timeScale: 1});
-    }, 300);
+function activateScene(foo) {    
+    z.components.sound.playSound();    
+    z.setAttribute('animation-mixer', {timeScale: 1});
     a.style.display = "none";
     setTimeout(function(){
       b.object3D.visible = true;
       c.style.display = "block";
-    }, 26000);
+      z.components.sound.stopSound();
+      z.setAttribute('sound', {src: '#loop-sound', loop: true});
+      z.components.sound.playSound();
+    }, foo);
     setTimeout(function(){
-      // z.setAttribute('animation-mixer', {clip: 'xy-xunhuan', loop: 'repeat'});
-      // BUG: xy-xunhuan animation has 30s gap
       z.setAttribute('animation-mixer', {timeScale: -1, loop: 'repeat'});
       e = true;
       setInterval(function(){
@@ -32,7 +31,7 @@ function activateScene() {
           z.setAttribute('animation-mixer', {timeScale: -1});
           e = true;
         }
-      }, 3000);
+      }, 2400);
     }, 30000);
 }
 function activateGame() { 

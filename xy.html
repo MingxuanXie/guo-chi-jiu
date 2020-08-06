@@ -11,11 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/build.css">
   </head>
   <body>
-    <audio id="voice" preload="auto">
-      <source src="assets/xiang_yu/xy1.mp3" type="audio/mpeg">
-    </audio>
     <div id="startbutton" class="intro-overlay" hidden>
-      <button class="button" onclick="activateScene()" type="button">开始体验</button>
+      <button class="button" onclick="activateScene(29000)" type="button">开始体验</button>
     </div>
     <div id="game" class="intro-overlay" hidden>
       <button class="button" onclick="activateGame()" type="button">出 拳</button>
@@ -36,12 +33,14 @@
         <img id="jd" src="assets/img/jd.png" preload="auto">
         <img id="bu" src="assets/img/bu.png" preload="auto">
         <img id="huaquan" src="assets/img/huaquan.gif" preload="auto">
+        <audio id="intro-sound" src="assets/xiang_yu/xy1.mp3" preload="auto"></audio>
+        <audio id="loop-sound" src="assets/xiang_yu/xy2.mp3" preload="auto"></audio>
       </a-assets>
       <a-entity camera position="0 1 0"></a-entity>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
       <a-entity light="color: #eee; intensity: 1" position="0 1 2"></a-entity>
       <a-entity light="type: ambient; color: #eee; intensity: 1"></a-entity>
-      <a-entity id="npc" gltf-model="#model" scale="20 20 20" position="0 -0.25 -2.5" rotation="0 10 0" animation-mixer="clip: xy-jinchang; timeScale: 0; loop: once"></a-entity>
+      <a-entity id="npc" gltf-model="#model" scale="20 20 20" position="0 -0.25 -2.5" rotation="0 10 0" animation-mixer="clip: xy-jinchang; timeScale: 0; loop: once" sound="src: #intro-sound; positional: false"></a-entity>
       <a-entity id="opponent" position="0.125 1.275 -0.4" scale="0.04 0.04 0.04" geometry="primitive:circle;" visible="false" material="shader:gif; src: #huaquan; color: #eedddd" gif=""></a-entity>
     </a-scene>
     <script src="js/build.js"></script>
