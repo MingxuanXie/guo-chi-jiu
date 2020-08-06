@@ -16,7 +16,6 @@ function activateScene(foo) {
     setTimeout(function(){
       b.object3D.visible = true;
       c.style.display = "block";
-      z.components.sound.stopSound();
       z.setAttribute('sound', {src: '#loop-sound', loop: true});
       z.components.sound.playSound();
     }, foo);
