@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <head>
+    <title>国池酒AR互动</title>
+    <script src="js/min.js"></script>
+    <script src="js/extras.min.js"></script>
+    <script src="js/gif-shader.min.js"></script>
+    <script src="js/gif-component.min.js"></script>
+    <script src="js/camera.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/build.css">
+  </head>
+  <body>
+    <div id="startbutton" class="intro-overlay" hidden>
+      <button class="button" onclick="activateScene(24500)" type="button">开始体验</button>
+    </div>
+    <div id="game" class="intro-overlay" hidden>
+      <button class="button" onclick="activateGame()" type="button">出 拳</button>
+    </div>
+    <div id="replay" class="intro-overlay" hidden>
+      <button class="button" onclick="activateReplay()" type="button">再 来</button>
+    </div>
+
+    <audio id="intro-sound" class="media-audio" src="assets/yu_ji/yj1.mp3" preload></audio>
+    <audio id="loop-sound" class="media-audio" src="assets/yu_ji/yj2.mp3" preload loop="loop"></audio >
+
+    <video id="webcam" autoplay playsinline></video>
+    <a-scene renderer="antialias: true; colorManagement: true;" 
+    loading-screen="dotsColor: #fff; backgroundColor: crimson" 
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false"
+    > 
+      <a-assets id="a-loader">
+        <a-asset-item id="model" src="assets/yu_ji/scene.glb" preload="auto"></a-asset-item>
+        <img id="huaquan" src="assets/img/huaquan.gif" preload="auto">
+        <!-- <audio id="intro-sound" src="assets/yu_ji/yj1.mp3" preload="auto"></audio>
+        <audio id="loop-sound" src="assets/yu_ji/yj2.mp3" preload="auto"></audio> -->
+      </a-assets>
+      <a-entity camera position="0 1 0"></a-entity>
+      <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+      <a-entity light="color: #eee; intensity: 1" position="0 1 2"></a-entity>
+      <a-entity light="type: ambient; color: #eee; intensity: 1"></a-entity>
+      <a-entity id="npc" gltf-model="#model" scale="0.25 0.25 0.25" position="-0.05 -0.35 -2.5" rotation="0 0 0" animation-mixer="clip: yuji-jinchang; timeScale:0; loop: once" sound="src: #intro-sound; positional: false"></a-entity>
+      <a-entity id="opponent" position="0.125 1.275 -0.4" scale="0.04 0.04 0.04" geometry="primitive:circle;" visible="false" material="shader:gif; src: #huaquan; color: #eedddd" gif=""></a-entity>
+    </a-scene>
+
+
+    <script src="js/build-test.js"></script>
+  </body>
+</html>
