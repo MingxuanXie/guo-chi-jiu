@@ -45,3 +45,22 @@ Mix HTML elements with A-frame: https://aframe.city/
 GLTF to GLB Packer: https://glb-packer.glitch.me/   https://sbtron.github.io/makeglb/
 
 Create Video Feed Background using https://glitch.com/edit/#!/stack-57493298?path=index.html%3A15%3A0
+
+
+CDN预热文件
+https://xinguyuan.cn/xy.html
+https://xinguyuan.cn/yj.html
+https://xinguyuan.cn/js/min.js
+https://xinguyuan.cn/js/extras.min.js
+https://xinguyuan.cn/js/gif-shader.min.js
+https://xinguyuan.cn/js/gif-component.min.js
+https://xinguyuan.cn/js/camera.js
+https://xinguyuan.cn/css/build.css
+https://xinguyuan.cn/assets/xiang_yu/scene.glb
+https://xinguyuan.cn/assets/img/huaquan.gif
+https://xinguyuan.cn/assets/xiang_yu/xy1.mp3
+https://xinguyuan.cn/assets/xiang_yu/xy2.mp3
+https://xinguyuan.cn/assets/yu_ji/scene.glb
+https://xinguyuan.cn/assets/img/huaquan.gif
+https://xinguyuan.cn/assets/yu_ji/yj1.mp3
+https://xinguyuan.cn/assets/yu_ji/yj2.mp3
