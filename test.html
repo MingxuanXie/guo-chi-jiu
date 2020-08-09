@@ -21,9 +21,6 @@
       <button class="button" onclick="activateReplay()" type="button">再 来</button>
     </div>
 
-    <audio id="intro-sound" class="media-audio" src="assets/yu_ji/yj1.mp3" preload></audio>
-    <audio id="loop-sound" class="media-audio" src="assets/yu_ji/yj2.mp3" preload loop="loop"></audio >
-
     <video id="webcam" autoplay playsinline></video>
     <a-scene renderer="antialias: true; colorManagement: true;" 
     loading-screen="dotsColor: #fff; backgroundColor: crimson" 
@@ -44,7 +41,8 @@
       <a-entity id="opponent" position="0.125 1.275 -0.4" scale="0.04 0.04 0.04" geometry="primitive:circle;" visible="false" material="shader:gif; src: #huaquan; color: #eedddd" gif=""></a-entity>
     </a-scene>
 
-
+    <audio id="intro-sound" class="media-audio" src="assets/yu_ji/yj1.mp3" preload></audio>
+    <audio id="loop-sound" class="media-audio" src="assets/yu_ji/yj2.mp3" preload loop="loop"></audio >
     <script src="js/build-test.js"></script>
   </body>
 </html>
