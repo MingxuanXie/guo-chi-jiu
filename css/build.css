@@ -44,3 +44,6 @@
     position: absolute;
     font-family: PingFangSC-Regular, sans-serif;
 }
+body {
+  background-color: black;
+}
