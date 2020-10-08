@@ -5,9 +5,11 @@
     <title>国池酒AR互动</title>
     <script src="js/min.js"></script>
     <script src="js/extras.min.js"></script>
-    <script src="js/gif-shader.min.js"></script>
-    <script src="js/gif-component.min.js"></script>
     <script src="js/camera.js"></script>
+
+<!-- New Feature -->
+    <script src="js/hyperrotate.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/build.css">
   </head>
   <body>
@@ -15,10 +17,10 @@
       <button class="button" onclick="activateScene(29000)" type="button">开始体验</button>
     </div>
     <div id="game" class="intro-overlay" hidden>
-      <button class="button" onclick="activateGame()" type="button">出 拳</button>
+      <button class="button" onclick="activateGame()" type="button"> 掷 骰 </button>
     </div>
     <div id="replay" class="intro-overlay" hidden>
-      <button class="button" onclick="activateReplay()" type="button">再 来</button>
+      <button class="button" onclick="activateReplay()" type="button"> 再 来 </button>
     </div>
     <video id="webcam" autoplay playsinline></video>
     <a-scene renderer="antialias: true; colorManagement: true;" 
@@ -28,7 +30,10 @@
     > 
       <a-assets id="a-loader">
         <a-asset-item id="model" src="assets/xiang_yu/scene.glb" preload="auto"></a-asset-item>
-        <img id="huaquan" src="assets/img/huaquan.gif" preload="auto">
+<!-- New Asset -->
+        <a-asset-item id="red-dice" src="assets/red_dice/out.glb" preload="auto"></a-asset-item>
+        <a-mixin id="dice" gltf-model="#red-dice" scale="0.05 0.05 0.05"  rotation="0 0 45" hyperrotate></a-mixin> 
+
         <audio id="intro-sound" src="assets/xiang_yu/xy1.mp3" preload="auto"></audio>
         <audio id="loop-sound" src="assets/xiang_yu/xy2.mp3" preload="auto"></audio>
       </a-assets>
@@ -37,7 +42,15 @@
       <a-entity light="color: #eee; intensity: 1" position="0 1 2"></a-entity>
       <a-entity light="type: ambient; color: #eee; intensity: 1"></a-entity>
       <a-entity id="npc" gltf-model="#model" scale="20 20 20" position="0 -0.25 -2.5" rotation="0 10 0" animation-mixer="clip: xy-jinchang; timeScale: 0; loop: once" sound="src: #intro-sound; positional: false"></a-entity>
-      <a-entity id="opponent" position="0.125 1.275 -0.4" scale="0.04 0.04 0.04" geometry="primitive:circle;" visible="false" material="shader:gif; src: #huaquan; color: #eedddd" gif=""></a-entity>
+<!-- New Feature -->
+      <a-entity id="opponent" visible="false">
+        <a-entity id="dice1" mixin="dice" position="-0.4 2 -1.5"></a-entity>
+        <a-entity id="dice2" mixin="dice" position="-0.2 2 -1.5"></a-entity>
+        <a-entity id="dice3" mixin="dice" position="0 2 -1.5"></a-entity>
+        <a-entity id="dice4" mixin="dice" position="0.2 2 -1.5"></a-entity>
+        <a-entity id="dice5" mixin="dice" position="0.4 2 -1.5"></a-entity>
+      </a-entity>
+
     </a-scene>
     <script src="js/build.js"></script>
   </body>

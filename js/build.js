@@ -1,1 +1,58 @@
-var _0x4e2e=["\x76\x6F\x69\x63\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x6E\x70\x63","\x73\x74\x61\x72\x74\x62\x75\x74\x74\x6F\x6E","\x6F\x70\x70\x6F\x6E\x65\x6E\x74","\x67\x61\x6D\x65","\x72\x65\x70\x6C\x61\x79","\x6C\x6F\x61\x64\x65\x64","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x61\x2D\x6C\x6F\x61\x64\x65\x72","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x62\x6C\x6F\x63\x6B","\x70\x6C\x61\x79\x53\x6F\x75\x6E\x64","\x73\x6F\x75\x6E\x64","\x63\x6F\x6D\x70\x6F\x6E\x65\x6E\x74\x73","\x61\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x2D\x6D\x69\x78\x65\x72","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x6E\x6F\x6E\x65","\x76\x69\x73\x69\x62\x6C\x65","\x6F\x62\x6A\x65\x63\x74\x33\x44","\x23\x6C\x6F\x6F\x70\x2D\x73\x6F\x75\x6E\x64","\x72\x65\x70\x65\x61\x74","\x74\x6F\x67\x67\x6C\x65\x50\x6C\x61\x79\x62\x61\x63\x6B","\x67\x69\x66"];var x=document[_0x4e2e[1]](_0x4e2e[0]);var z=document[_0x4e2e[1]](_0x4e2e[2]);var a=document[_0x4e2e[1]](_0x4e2e[3]);var b=document[_0x4e2e[1]](_0x4e2e[4]);var c=document[_0x4e2e[1]](_0x4e2e[5]);var d=document[_0x4e2e[1]](_0x4e2e[6]);var e=true;document[_0x4e2e[1]](_0x4e2e[9])[_0x4e2e[8]](_0x4e2e[7],activateStartButton);function activateStartButton(){a[_0x4e2e[11]][_0x4e2e[10]]= _0x4e2e[12]}function activateScene(_0x20daxa){z[_0x4e2e[15]][_0x4e2e[14]][_0x4e2e[13]]();z[_0x4e2e[17]](_0x4e2e[16],{timeScale:1});a[_0x4e2e[11]][_0x4e2e[10]]= _0x4e2e[18];setTimeout(function(){b[_0x4e2e[20]][_0x4e2e[19]]= true;c[_0x4e2e[11]][_0x4e2e[10]]= _0x4e2e[12];z[_0x4e2e[17]](_0x4e2e[14],{src:_0x4e2e[21],loop:true});z[_0x4e2e[15]][_0x4e2e[14]][_0x4e2e[13]]()},_0x20daxa);setTimeout(function(){z[_0x4e2e[17]](_0x4e2e[16],{timeScale:-1,loop:_0x4e2e[22]});e= true;setInterval(function(){if(e){z[_0x4e2e[17]](_0x4e2e[16],{timeScale:1});e= false}else {z[_0x4e2e[17]](_0x4e2e[16],{timeScale:-1});e= true}},2400)},29000)}function activateGame(){b[_0x4e2e[15]][_0x4e2e[24]][_0x4e2e[23]]();c[_0x4e2e[11]][_0x4e2e[10]]= _0x4e2e[18];d[_0x4e2e[11]][_0x4e2e[10]]= _0x4e2e[12]}function activateReplay(){b[_0x4e2e[15]][_0x4e2e[24]][_0x4e2e[23]]();c[_0x4e2e[11]][_0x4e2e[10]]= _0x4e2e[12];d[_0x4e2e[11]][_0x4e2e[10]]= _0x4e2e[18]}
+var x = document.getElementById("voice"); 
+var z = document.getElementById("npc");
+var a = document.getElementById("startbutton");
+var b = document.getElementById("opponent");
+var c = document.getElementById("game");
+var d = document.getElementById("replay");
+var dice1 = document.getElementById("dice1");
+var dice2 = document.getElementById("dice2");
+var dice3 = document.getElementById("dice3");
+var dice4 = document.getElementById("dice4");
+var dice5 = document.getElementById("dice5");
+var e = true;
+document.getElementById("a-loader").addEventListener("loaded", activateStartButton);
+function activateStartButton() {
+  a.style.display = "block";
+}
+function activateScene(foo) {    
+    z.components.sound.playSound();    
+    z.setAttribute('animation-mixer', {timeScale: 1});
+    a.style.display = "none";
+    setTimeout(function(){
+      b.object3D.visible = true;
+      c.style.display = "block";
+      z.setAttribute('sound', {src: '#loop-sound', loop: true});
+      z.components.sound.playSound();
+    }, foo);
+    setTimeout(function(){
+      z.setAttribute('animation-mixer', {timeScale: -1, loop: 'repeat'});
+      e = true;
+      setInterval(function(){
+        if (e){
+          z.setAttribute('animation-mixer', {timeScale: 1});
+          e = false;
+        } else {
+          z.setAttribute('animation-mixer', {timeScale: -1});
+          e = true;
+        }
+      }, 2400);
+    }, 29000);
+}
+function activateGame() { 
+  dice1.components.hyperrotate.pause();
+  dice2.components.hyperrotate.pause();
+  dice3.components.hyperrotate.pause();
+  dice4.components.hyperrotate.pause();
+  dice5.components.hyperrotate.pause();
+  c.style.display = "none";
+  d.style.display = "block";
+}
+function activateReplay() { 
+  dice1.components.hyperrotate.play();
+  dice2.components.hyperrotate.play();
+  dice3.components.hyperrotate.play();
+  dice4.components.hyperrotate.play();
+  dice5.components.hyperrotate.play();
+  c.style.display = "block";
+  d.style.display = "none";
+}
