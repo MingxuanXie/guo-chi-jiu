@@ -39,7 +39,7 @@ AFRAME.registerComponent('hyperrotate', {
             );
         } else if(foo == 5){
             this.el.object3D.rotation.set(
-                THREE.Math.degToRad(180),
+                THREE.Math.degToRad(90),
                 THREE.Math.degToRad(-90),
                 THREE.Math.degToRad(0)
             );
