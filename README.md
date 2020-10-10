@@ -25,7 +25,9 @@ nginx初始内容：
 └── poweredby.png -> nginx-logo.png
 ```
 
-更新服务器内容`git pull origin master`
+更新服务器内容
+`cd /usr/share/nginx/html`
+`git pull origin master`
 
 仓库地址 https://gitee.com/MingxuanXie/guo-chi-jiu
 
