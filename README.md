@@ -25,7 +25,9 @@ nginx初始内容：
 └── poweredby.png -> nginx-logo.png
 ```
 
-更新服务器内容`git pull origin master`
+更新服务器内容
+`cd /usr/share/nginx/html`
+`git pull origin master`
 
 仓库地址 https://gitee.com/MingxuanXie/guo-chi-jiu
 
@@ -48,19 +50,22 @@ Create Video Feed Background using https://glitch.com/edit/#!/stack-57493298?pat
 
 
 CDN预热文件
+```
 https://xinguyuan.cn/xy.html
 https://xinguyuan.cn/yj.html
 https://xinguyuan.cn/js/min.js
 https://xinguyuan.cn/js/extras.min.js
-https://xinguyuan.cn/js/gif-shader.min.js
-https://xinguyuan.cn/js/gif-component.min.js
 https://xinguyuan.cn/js/camera.js
+https://xinguyuan.cn/js/hyperrotate.js
 https://xinguyuan.cn/css/build.css
+https://xinguyuan.cn/js/buildxy.js
+https://xinguyuan.cn/js/buildyj.js
 https://xinguyuan.cn/assets/xiang_yu/scene.glb
-https://xinguyuan.cn/assets/img/huaquan.gif
 https://xinguyuan.cn/assets/xiang_yu/xy1.mp3
 https://xinguyuan.cn/assets/xiang_yu/xy2.mp3
+https://xinguyuan.cn/assets/white_dice/out.glb
 https://xinguyuan.cn/assets/yu_ji/scene.glb
-https://xinguyuan.cn/assets/img/huaquan.gif
 https://xinguyuan.cn/assets/yu_ji/yj1.mp3
 https://xinguyuan.cn/assets/yu_ji/yj2.mp3
+https://xinguyuan.cn/assets/red_dice/out.glb
+```
