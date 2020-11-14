@@ -45,5 +45,6 @@
     font-family: PingFangSC-Regular, sans-serif;
 }
 body {
-  background-color: black;
+  background-color:lightgray;
+  /* background-image: linear-gradient(to bottom, darkred, grey ,black); */
 }
