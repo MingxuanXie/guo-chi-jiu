@@ -6,7 +6,10 @@
     <script src="js/min.js"></script>
     <script src="js/extras.min.js"></script>
     <script src="js/camera.js"></script>
+
+<!-- New Feature -->
     <script src="js/hyperrotate.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/build.css">
   </head>
   <body>
@@ -27,7 +30,7 @@
     > 
       <a-assets id="a-loader">
         <a-asset-item id="model" src="assets/xiang_yu/scene.glb" preload="auto"></a-asset-item>
-
+<!-- New Asset -->
         <a-asset-item id="white-dice" src="assets/white_dice/out.glb" preload="auto"></a-asset-item>
         <a-mixin id="dice" gltf-model="#white-dice" scale="0.06 0.06 0.06"  rotation="0 0 45" hyperrotate></a-mixin> 
 
@@ -38,8 +41,8 @@
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
       <a-entity light="color: #eee; intensity: 1.2" position="0 1 2"></a-entity>
       <a-entity light="type: ambient; color: #eee; intensity: 1.1"></a-entity>
-      <a-entity id="npc" gltf-model="#model" scale="20 20 20" position="0 -0.25 -2.5" rotation="0 10 0" animation-mixer="clip: xy-jinchang; timeScale: 0; loop: once" sound="src: #intro-sound; positional: false"></a-entity>
-
+      <a-entity id="npc" gltf-model="#model" scale="18 18 18" position="0.1 -0.4 -3" rotation="0 0 0" animation-mixer="timeScale: 0; loop: once" sound="src: #intro-sound; positional: false"></a-entity>
+<!-- New Feature -->
       <a-entity id="opponent" visible="false" position="0 -0.50 -0.2" rotation="12 0 0">
         <a-entity id="dice1" mixin="dice" position="-0.4 2 -1.5"></a-entity>
         <a-entity id="dice2" mixin="dice" position="-0.2 2 -1.5"></a-entity>
