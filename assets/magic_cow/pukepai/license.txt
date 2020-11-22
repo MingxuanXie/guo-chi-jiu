@@ -1,0 +1,11 @@
+Model Information:
+* title:	pukepai
+* source:	https://sketchfab.com/3d-models/pukepai-2510c9ff45824123a9ffa29f6f58f681
+* author:	Mingxuan Xie (https://sketchfab.com/vrchitecture)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "pukepai" (https://sketchfab.com/3d-models/pukepai-2510c9ff45824123a9ffa29f6f58f681) by Mingxuan Xie (https://sketchfab.com/vrchitecture) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
