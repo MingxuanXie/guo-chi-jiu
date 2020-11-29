@@ -6,11 +6,11 @@
     <script src="js/min.js"></script>
     <script src="js/extras.min.js"></script>
     <script src="js/camera.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/build.css">
+    <link rel="stylesheet" type="text/css" href="css/buildmsn.css">
   </head>
   <body>
     <div id="startbutton" class="intro-overlay" hidden>
-      <button class="button" onclick="activateScene(26000)" type="button">开始体验</button>
+      <button class="button" onclick="activateScene()" type="button">开始体验</button>
     </div>
     <video id="webcam" autoplay playsinline></video>
     <a-scene 
@@ -18,29 +18,29 @@
     loading-screen="dotsColor: #fff; backgroundColor: crimson" 
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false"
-    stats
     > 
       <a-assets id="a-loader">
         <a-asset-item id="mafamo" src="assets/magic_cow/mafamao/scene.gltf" preload="auto"></a-asset-item>
         <a-asset-item id="niu" src="assets/magic_cow/niu/scene.gltf" preload="auto"></a-asset-item>
-        <a-asset-item id="pukepai" src="assets/magic_cow/pukepai2/scene.gltf" preload="auto"></a-asset-item>
-        <a-asset-item id="qiu" src="assets/magic_cow/qiu/qiu_fixed.gltf" preload="auto"></a-asset-item>
-        <a-asset-item id="shuziyoupiao" src="assets/magic_cow/shuziyoupiao/scene.gltf" preload="auto"></a-asset-item>
+        <a-asset-item id="qiu" src="assets/magic_cow/qiu/scene.gltf" preload="auto"></a-asset-item>
+        <a-asset-item id="shuziyoupiao" src="assets/magic_cow/shuziyoupiao/scene_modified.gltf" preload="auto"></a-asset-item>
+        <a-asset-item id="youpiao1937" src="assets/magic_cow/youpiao1937/scene.gltf" preload="auto"></a-asset-item>
         <a-asset-item id="weimulianzi" src="assets/magic_cow/weimulianzi/scene.gltf" preload="auto"></a-asset-item>
-        <a-asset-item id="huaban" src="assets/magic_cow/huaban/scene.gltf" preload="auto"></a-asset-item>
+        <a-asset-item id="huaban-pai" src="assets/magic_cow/huaban-pai/scene_modified.gltf" preload="auto"></a-asset-item>
+        <audio id="intro-sound" src="assets/magic_cow/niu-music-ok.mp3" preload="auto"></audio>
       </a-assets>
-      <a-entity camera></a-entity>
+      <a-entity camera="near: 0.001"></a-entity>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
       <a-entity light="color: #ddd; intensity: 0.35" position="0 2 2"></a-entity>
       <a-entity light="type: ambient; color: #fff"></a-entity>
-      <a-entity id="npc" scale="0.85 0.85 0.85" position="0 -2 -10">
-        <a-entity id="g1" gltf-model="#qiu" scale="1 1 1" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: false"></a-entity>
-        <a-entity id="g2" gltf-model="#pukepai"  animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
-        <a-entity id="g3" gltf-model="#niu"  animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
-        <a-entity id="g4" gltf-model="#mafamo" scale="1.6 1.6 1.6" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
-        <a-entity id="g5" gltf-model="#shuziyoupiao" scale="7.5 7.5 7.5" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
-        <a-entity id="g6" gltf-model="#weimulianzi" scale="1.6 1.6 1" rotation="0 180 0" position="0 -2.5 10" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
-        <a-entity id="g7" gltf-model="#huaban" scale="4.5 4.5 4.5" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
+      <a-entity id="npc" scale="1 1 1" position="0 -2.5 -12" sound="src: #intro-sound; positional: false">
+        <a-entity id="g1" gltf-model="#qiu" scale="9 9 9" position="0 -0.25 0" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: false"></a-entity>
+        <a-entity id="g3" gltf-model="#niu" scale="1 1 1" rotation="0 0 0" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
+        <a-entity id="g4" gltf-model="#mafamo" scale="2 2 2" position="0 -0.2 1" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
+        <a-entity id="g5" gltf-model="#shuziyoupiao" scale="100 100 100" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
+        <a-entity id="g6" gltf-model="#weimulianzi" scale="1 1 1" rotation="0 180 0" position="0 -1.5 7" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
+        <a-entity id="g7" gltf-model="#huaban-pai" position="0 0 0" scale="120 120 120" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
+        <a-entity id="g8" gltf-model="#youpiao1937" scale="1 1 1" animation-mixer="timeScale: 0; loop: once; clampWhenFinished: true"></a-entity>
       </a-entity>
     </a-scene>
     <script src="js/buildmsn.js"></script>

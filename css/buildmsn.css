@@ -1,0 +1,50 @@
+#webcam {
+    opacity:1;
+    position: fixed;
+    background-size: 100% 100%;
+    top: 0; left: 0; 
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    z-index: -1000;
+}
+.intro-overlay {
+  z-index: 1;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.button {
+  border: none;
+  color: darkred;
+  opacity: 0.9;
+  background-color:goldenrod;
+  padding: 38px 16px;
+  border-radius: 64px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-family: PingFangSC-Regular, sans-serif;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+.a-loader-title {
+    z-index: 1;
+    position: absolute;
+    font-family: PingFangSC-Regular, sans-serif;
+}
+body {
+  /* background-color:lightgray; */
+  background-color:black;
+  /* background-image: linear-gradient(to bottom, darkred, grey ,black); */
+}
