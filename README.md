@@ -23,7 +23,7 @@ https://xinguyuan.cn/assets/magic_cow/mafamao/scene.glb
 https://xinguyuan.cn/assets/magic_cow/niu/scene.glb
 https://xinguyuan.cn/assets/magic_cow/qiu/scene.glb
 https://xinguyuan.cn/assets/magic_cow/shuziyoupiao/scene.glb
-https://xinguyuan.cn/assets/magic_cow/youpiao1937/scene.glb
+https://xinguyuan.cn/assets/magic_cow/wenzi/scene.glb
 https://xinguyuan.cn/assets/magic_cow/weimulianzi/scene.glb
 https://xinguyuan.cn/assets/magic_cow/huaban-pai/scene.glb
 https://xinguyuan.cn/assets/magic_cow/niu-music-ok.mp3
